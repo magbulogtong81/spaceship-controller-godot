@@ -5,10 +5,12 @@ change the values on ship scene depending on your need
 
 ### (touchscreens)
 move the joystick to move the ship.
-touch and drag in thd right side of the screen to look around
+
+touch and drag in the right side of the screen to look around.
 
 ### (mouse & keyboard)
-use WSAD controls to move the ship
-move the mouse to look around
+use WSAD controls to move the ship.
+
+move the mouse to look around.
 
 
