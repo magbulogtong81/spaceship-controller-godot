@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyg1iyh8i2wxb"]
+
+[ext_resource type="ArrayMesh" uid="uid://bovyu143ciq0i" path="res://assets/spaceship/test.obj" id="1_7x4xx"]
+
+[node name="ship_model" type="MeshInstance3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+mesh = ExtResource("1_7x4xx")
+skeleton = NodePath("../..")

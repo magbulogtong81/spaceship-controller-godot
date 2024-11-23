@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://tlxr02an6yom"]
+
+[ext_resource type="PackedScene" uid="uid://bsq7tr4p5pwpx" path="res://scenes/ship.tscn" id="1_a3lgu"]
+[ext_resource type="Texture2D" uid="uid://bipl1y6un87n5" path="res://assets/sky dome/scene_2.png" id="2_a5xd6"]
+[ext_resource type="PackedScene" uid="uid://dyg1iyh8i2wxb" path="res://assets/spaceship/ship_model.tscn" id="3_d8b7g"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_higr5"]
+panorama = ExtResource("2_a5xd6")
+
+[sub_resource type="Sky" id="Sky_croyi"]
+sky_material = SubResource("PanoramaSkyMaterial_higr5")
+
+[sub_resource type="Environment" id="Environment_lx3ju"]
+background_mode = 2
+sky = SubResource("Sky_croyi")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_bajet"]
+
+[node name="world" type="Node3D"]
+
+[node name="ship" parent="." instance=ExtResource("1_a3lgu")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.955458, -0.163052, 0.245994, -0.0561955, 0.918788, 0.390731, -0.289726, 0.359504, -0.887026, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lx3ju")
+
+[node name="boxes" type="Node3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, -80)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="boxes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6, 0, 0)
+mesh = SubResource("BoxMesh_bajet")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="boxes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, 0)
+mesh = SubResource("BoxMesh_bajet")
+skeleton = NodePath("../..")
+
+[node name="boxes2" type="Node3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, -120)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="boxes2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6, 0, 0)
+mesh = SubResource("BoxMesh_bajet")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="boxes2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, 0)
+mesh = SubResource("BoxMesh_bajet")
+skeleton = NodePath("../..")
+
+[node name="boxes3" type="Node3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, -160)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="boxes3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6, 0, 0)
+mesh = SubResource("BoxMesh_bajet")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="boxes3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, 0)
+mesh = SubResource("BoxMesh_bajet")
+skeleton = NodePath("../..")
+
+[node name="big ship" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -250)
+
+[node name="ship_model" parent="big ship" instance=ExtResource("3_d8b7g")]
+transform = Transform3D(-3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, 0, 0, 0)
